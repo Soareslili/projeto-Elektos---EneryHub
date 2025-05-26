@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ⚡ Elektos - EnergyHub
 Este é o projeto desenvolvido como teste técnico para a vaga de Desenvolvedor(a) Frontend na Flori Tech (Elektos). A proposta consiste na criação de um dashboard responsivo e funcional utilizando React e Tailwind CSS, com dados mockados e elementos interativos.
 
