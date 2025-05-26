@@ -1,9 +1,9 @@
 import React from "react";
 import { Bolt } from "lucide-react";
 
-export default function Widget({ title, value, iconColor, percentage }) {
+export default function Widget({ title, value, iconColor, percentage, className = "" }) {
   return (
-    <div className="bg-white rounded-lg shadow p-4">
+    <div className={`bg-white rounded-lg shadow p-4 transition-transform duration-300 ${className}`}>
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-sm text-gray-500">{title}</h3>
@@ -19,3 +19,4 @@ export default function Widget({ title, value, iconColor, percentage }) {
     </div>
   );
 }
+

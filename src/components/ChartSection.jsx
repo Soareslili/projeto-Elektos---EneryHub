@@ -24,7 +24,8 @@ const COLORS = ["#10B981", "#3B82F6", "#F59E0B", "#EF4444"];
 export default function ChartSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="bg-white p-4 rounded-lg shadow">
+   
+      <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
         <h2 className="font-semibold mb-2 text-gray-700">Consumo Mensal (kWh)</h2>
         <BarChart width={500} height={250} data={barData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -34,8 +35,9 @@ export default function ChartSection() {
           <Bar dataKey="consumo" fill="#10B981" />
         </BarChart>
       </div>
-      <div className="bg-white p-4 rounded-lg shadow">
-        <h2 className="font-semibold mb-2 text-gray-700">Distribuição por Tipo</h2>
+
+      <div className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
+        <h2 className="font-semibold mb-4 text-gray-700">Distribuição por Tipo</h2>
         <PieChart width={300} height={250}>
           <Pie
             data={pieData}
@@ -51,9 +53,17 @@ export default function ChartSection() {
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
+
+         
+          <Tooltip
+            formatter={(value, name) => [`${value}%`, name]}
+            contentStyle={{ borderRadius: '0.5rem', padding: '0.5rem' }}
+          />
+
           <Legend />
         </PieChart>
       </div>
     </div>
   );
 }
+
